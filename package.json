@@ -35,6 +35,9 @@
     "ink": "*",
     "react": "*"
   },
+  "dependencies": {
+    "open": "^8.4.0"
+  },
   "devDependencies": {
     "@types/node": "^20.0.0",
     "@types/react": "^19.0.0",
