@@ -1,0 +1,49 @@
+{
+  "name": "@ziggle-dev/spotify-tool",
+  "version": "1.0.0",
+  "description": "Search and play songs on Spotify",
+  "main": "dist/index.js",
+  "author": {
+    "name": "Ziggler",
+    "email": "dev@ziggler.dev",
+    "github": "ziggle-dev"
+  },
+  "repository": "https://github.com/local/spotify-tool",
+  "license": "MIT",
+  "clanker": {
+    "category": "Utility",
+    "capabilities": [
+      "NetworkAccess",
+      "SystemExecute"
+    ],
+    "tags": [
+      "spotify",
+      "music",
+      "player",
+      "search",
+      "api"
+    ],
+    "minVersion": "0.1.33"
+  },
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"No tests yet\"",
+    "lint": "eslint src --ext .ts,.tsx"
+  },
+  "peerDependencies": {
+    "@ziggler/clanker": "*",
+    "ink": "*",
+    "react": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@ziggler/clanker": "^0.1.31",
+    "eslint": "^8.0.0",
+    "ink": "^6.0.1",
+    "react": "^19.1.0",
+    "typescript": "^5.0.0"
+  }
+}
