@@ -44,7 +44,7 @@
     "@types/react": "^19.0.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
-    "@ziggler/clanker": "^0.1.31",
+    "@ziggler/clanker": "^0.1.33",
     "eslint": "^8.0.0",
     "ink": "^6.0.1",
     "react": "^19.1.0",
