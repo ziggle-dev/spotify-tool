@@ -9,6 +9,7 @@
     "noImplicitAny": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
+    "allowImportingTsExtensions": false,
     "forceConsistentCasingInFileNames": true,
     "resolveJsonModule": true,
     "moduleResolution": "node",

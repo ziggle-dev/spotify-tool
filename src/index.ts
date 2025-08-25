@@ -1,4 +1,4 @@
-// @ts-ignore - TypeScript has issues resolving this but it works at runtime
+// @ts-ignore
 import { createTool, ToolCategory, ToolCapability } from '@ziggler/clanker';
 import open from 'open';
 import { exec } from 'child_process';
