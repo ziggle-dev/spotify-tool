@@ -2,6 +2,7 @@
   "name": "@ziggle-dev/spotify-tool",
   "version": "1.0.0",
   "description": "Search and play songs on Spotify",
+  "type": "module",
   "main": "dist/index.js",
   "author": {
     "name": "Ziggler",
