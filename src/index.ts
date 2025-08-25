@@ -1,12 +1,37 @@
 // @ts-ignore
 import { createTool, ToolCategory, ToolCapability } from '@ziggler/clanker';
-import open from 'open';
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import * as http from 'http';
+import { platform } from 'os';
 import * as url from 'url';
 
 const execAsync = promisify(exec);
+
+// Helper function to open URLs without the 'open' package
+async function openUrl(urlToOpen: string): Promise<void> {
+  const os = platform();
+  let command: string;
+  
+  switch (os) {
+    case 'darwin':
+      command = `open "${urlToOpen}"`;
+      break;
+    case 'win32':
+      command = `start "" "${urlToOpen}"`;
+      break;
+    default: // Linux and others
+      command = `xdg-open "${urlToOpen}"`;
+      break;
+  }
+  
+  try {
+    await execAsync(command);
+  } catch (error) {
+    // Fallback - just log the URL
+    console.log(`Please open this URL in your browser: ${urlToOpen}`);
+  }
+}
 
 interface SpotifyToken {
   access_token: string;
@@ -1172,7 +1197,7 @@ export default createTool()
           
           // Open browser
           context.logger?.info('Opening Spotify authorization in browser...');
-          await open(authUrl);
+          await openUrl(authUrl);
           
           // Wait for token with timeout
           const timeoutPromise = new Promise<string>((_, reject) => {
@@ -2497,7 +2522,7 @@ export default createTool()
           }
           
           // Open the new track
-          await open(spotifyUri);
+          await openUrl(spotifyUri);
           output += '\n✓ Opened in Spotify app';
           
           // Give Spotify a moment to load the track, then play it
@@ -2508,7 +2533,7 @@ export default createTool()
           }
         } catch (error) {
           try {
-            await open(firstTrack.external_urls.spotify);
+            await openUrl(firstTrack.external_urls.spotify);
             output += '\n✓ Opened in web browser';
           } catch (webError) {
             output += '\n✗ Failed to open Spotify';
