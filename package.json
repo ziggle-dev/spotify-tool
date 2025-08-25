@@ -34,7 +34,8 @@
   "peerDependencies": {
     "@ziggler/clanker": "*",
     "ink": "*",
-    "react": "*"
+    "react": "*",
+    "open": "^8.4.0"
   },
   "dependencies": {
     "open": "^8.4.0"
